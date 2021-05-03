@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     JSON.parse(localStorage.state) : {};
   const store = configureStore(preloadedState);
 
+  $.ajax({
+    method: 'GET',
+    url: '/api/todos'
+  }).then(
+    todos => console.log(todos),
+    error => console.log(error)
+  );
+
   const root = document.getElementById('content');
   ReactDOM.render(<Root store={store} />, root);
 });
