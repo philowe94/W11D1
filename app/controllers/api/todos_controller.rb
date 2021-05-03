@@ -8,10 +8,11 @@ class Api::TodosController < ApplicationController
 
     def create 
         @todo = Todo.new(todo_params)
-
+        debugger
         if @todo.save
             render json: @todo
         else 
+            debugger
             render json: @todo.errors.full_messages, status: 422
         end 
     end 

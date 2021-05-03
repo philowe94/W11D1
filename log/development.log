@@ -1090,3 +1090,514 @@ Processing by Api::TodosController#index as JSON
 Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2021-05-03 16:05:52 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sebastiansanchez/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1351ms (Views: 1349.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:06:16 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (11.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 76ms (Views: 4.8ms | ActiveRecord: 69.2ms)
+
+
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (78.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "W11D1_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (32.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "W11D1_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (952.4ms)[0m  [1m[35mCREATE DATABASE "W11D1_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (56.6ms)[0m  [1m[35mCREATE DATABASE "W11D1_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (59.6ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210503180703)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-03 20:10:11.235359"], ["updated_at", "2021-05-03 20:10:11.235359"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying NOT NULL, "body" character varying NOT NULL, "done" boolean NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210503180703)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-03 20:10:11.294676"], ["updated_at", "2021-05-03 20:10:11.294676"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-05-03 20:10:11.296464"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "go to the store"], ["body", "buy food"], ["done", false]]
+  ↳ db/seeds.rb:11
+  [1m[36mTodo Create (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "shower"], ["body", "shampoo hair"], ["done", true]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+Started GET "/" for ::1 at 2021-05-03 16:11:00 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/sebastiansanchez/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1180ms (Views: 1178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:11:02 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 72ms (Views: 17.7ms | ActiveRecord: 51.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-03 16:11:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:11:31 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (79.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 81ms (Views: 1.4ms | ActiveRecord: 79.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-03 16:34:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 480ms (Views: 476.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:34:12 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (151.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 166ms (Views: 14.6ms | ActiveRecord: 151.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:35:46 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 16:37:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 297ms (Views: 295.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:37:07 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (71.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 82ms (Views: 8.3ms | ActiveRecord: 71.8ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:37:11 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 16:38:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 265ms (Views: 263.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:38:59 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:39:04 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 16:45:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 524ms (Views: 521.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-03 16:46:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 409ms (Views: 405.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:46:55 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (132.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 149ms (Views: 16.7ms | ActiveRecord: 132.3ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:47:00 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 16:56:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 366ms (Views: 363.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-03 16:57:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 344ms (Views: 342.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 16:57:17 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (129.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 139ms (Views: 9.3ms | ActiveRecord: 129.4ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:57:27 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:59:03 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"hello"=>"title", "world"=>"body", "hi"=>"true"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started POST "/api/todos" for ::1 at 2021-05-03 16:59:18 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"title"=>"title", "body"=>"body", "done"=>"true"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 17:00:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 564ms (Views: 553.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:00:19 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (91.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 96ms (Views: 2.6ms | ActiveRecord: 91.5ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:00:25 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"title"=>"title", "body"=>"body", "done"=>"true"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 17:02:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 319ms (Views: 310.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:02:22 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (91.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 95ms (Views: 2.5ms | ActiveRecord: 91.1ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:02:27 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"title"=>"title", "body"=>"body", "done"=>"true"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:03:26 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"title"=>"title", "body"=>"body", "done"=>"true"}}
+  [1m[35m (7.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+  [1m[36mTodo Create (84.1ms)[0m  [1m[32mINSERT INTO "todos" ("title", "body", "done") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "title"], ["body", "body"], ["done", true]]
+  ↳ app/controllers/api/todos_controller.rb:12
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+Completed 200 OK in 126ms (Views: 0.5ms | ActiveRecord: 118.7ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:03:50 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"hello"=>"title", "world"=>"body", "hi"=>"true"}}
+Unpermitted parameters: :hello, :world, :hi
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+  [1m[35m (5.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+Completed 422 Unprocessable Entity in 35ms (Views: 0.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-03 17:06:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 361ms (Views: 358.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:06:31 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (60.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 96ms (Views: 35.6ms | ActiveRecord: 60.1ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:06:37 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"hello"=>"title", "world"=>"body", "hi"=>"true"}}
+Unpermitted parameters: :hello, :world, :hi
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:08:59 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 17:16:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 431ms (Views: 428.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:16:03 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (111.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 129ms (Views: 17.1ms | ActiveRecord: 111.4ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:16:17 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 17:17:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:17:22 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (124.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 129ms (Views: 3.3ms | ActiveRecord: 124.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-03 17:17:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:18:43 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (62.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 67ms (Views: 3.5ms | ActiveRecord: 62.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:19:03 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:51:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 17:21:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:21:23 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (20.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 128ms (Views: 6.4ms | ActiveRecord: 117.8ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:21:41 -0400
+Processing by Api::TodosController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:52:in `todo_params'
+  app/controllers/api/todos_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-05-03 17:23:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 349ms (Views: 338.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-05-03 17:23:37 -0400
+Processing by Api::TodosController#index as JSON
+  [1m[36mTodo Load (12.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:5
+Completed 200 OK in 39ms (Views: 25.4ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-05-03 17:23:39 -0400
+Processing by Api::TodosController#create as JSON
+  Parameters: {"todo"=>{"title"=>"hello", "hello"=>"hi", "done"=>"not done"}}
+Unpermitted parameter: :hello
+  [1m[35m (12.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/todos_controller.rb:12
+Completed 422 Unprocessable Entity in 53433ms (Views: 0.8ms | ActiveRecord: 12.4ms)
+
+
